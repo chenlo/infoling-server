@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6373785c62658d043180d58e"
+  },
+  "name": "Bern",
+  "email": "test@test.es",
+  "password": "$2b$12$NzH69joeAxcj8shRM03EOuIh9vuHof1ODhUWimnjHll9YJ7OOHi7.",
+  "picture": "/avatar.png",
+  "role": [
+    "Registered"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668511836911"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668511836911"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "639106c98ad29e343b3d01e9"
+  },
+  "name": "Lucie Tomaskova",
+  "email": "lucie.tomaskova@yahoo.com",
+  "password": "$2b$12$OFfIhCF3KbAmaxGtErQfCu9lWAtqBiT5dsedGhpHN7JV0NefvUp.e",
+  "picture": "/avatar.png",
+  "role": [
+    "Registered"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1670448841208"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1670448841208"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "639109948ad29e343b3d01ee"
+  },
+  "name": "Usuario Loco Gatti",
+  "email": "user@test.es",
+  "password": "$2b$12$R3/ik2/3TZ9TpGDCbjv1wOLE9HP6WO6zZudRQoDb3GRlGNU5W9Loe",
+  "picture": "/avatar.png",
+  "role": [
+    "Registered"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1670449556828"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1670449556828"
+    }
+  },
+  "__v": 0
+}]

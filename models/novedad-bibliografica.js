@@ -2,6 +2,53 @@ import mongoose from 'mongoose'
 const { Schema } = mongoose
 
 const novedadBibliograficaSchema = new Schema({
+    autores: [
+        {
+            primerApellido: {
+                type: String,
+                required: true
+            },
+            segundoApellido: {
+                type: String
+            },
+            nombre: {
+                type: String,
+                required: true
+            },
+            tipo: {
+                type: String,
+                default: "autor",
+                required: true
+            },
+        }
+    ],
+    formatos: [
+        {
+            formato: {
+                type: String,
+                required: true
+            },
+            isbn13: {
+                type: String,
+                unique: true
+            },
+            isbn10: {
+                type: String,
+                unique: true
+            },
+            numPag: {
+                type: Number,
+                required: true
+            },
+            precioEur: {
+                type: Number,
+                required: true
+            },
+            precioUsa: {
+                type: Number
+            },
+        }
+    ],
     titulo: {
         type: String,
         required: true,
@@ -31,6 +78,9 @@ const novedadBibliograficaSchema = new Schema({
     descripcion: {
         type: String
     },
+    indice: {
+        type: String
+    },
     validated: {
         type: Boolean,
         default: 0
@@ -41,7 +91,11 @@ const novedadBibliograficaSchema = new Schema({
     },
     urlPublicacion: {
         type: String
-    }
+    },
+    imagenes: {
+        type: String
+    },
+    tematicas: [ { type: String } ],
 }, 
 { timestamps: true }    
 )

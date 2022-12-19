@@ -4,12 +4,19 @@ export const save = async (req, res) => {
     try {
         console.log(req.body)
         const { 
+            autores,
             titulo,
             subtitulo,
-            anno ,
+            anno,
             lugarEdicion,
             editorial,
-            coleccion
+            coleccion,
+            url,
+            tematicas,
+            formatos,
+            indice,
+            descripcion,
+            imagenes
         } = req.body
 
         // Validamos campos
@@ -19,12 +26,19 @@ export const save = async (req, res) => {
 
         // Guardar
         const novedad = new NovedadBibliografica({
+            autores,
             titulo,
             subtitulo,
-            anno ,
+            anno,
             lugarEdicion,
             editorial,
-            coleccion
+            coleccion,
+            url,
+            tematicas,
+            formatos,
+            indice,
+            descripcion,
+            imagenes
         })
         await novedad.save()
         console.log("Novedad bibliográfica guardada")
