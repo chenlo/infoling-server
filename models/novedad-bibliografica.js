@@ -19,7 +19,7 @@ const novedadBibliograficaSchema = new Schema({
                 type: String,
                 default: "autor",
                 required: true
-            },
+            }
         }
     ],
     formatos: [
@@ -76,10 +76,12 @@ const novedadBibliograficaSchema = new Schema({
         type: String
     },
     descripcion: {
-        type: String
+        type: String,
+        required: true
     },
     indice: {
-        type: String
+        type: String,
+        required: true
     },
     validated: {
         type: Boolean,
