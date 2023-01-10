@@ -1,9 +1,19 @@
 import NovedadBibliografica from "../models/novedad-bibliografica"
 import { validISBN } from "../utils/utils"
+const { body, validationResult } = require('express-validator');
+
+export const validate = async (req, res) => {
+    try {
+        console.log('Validando ', req.body.titulo)
+        console.log(req.body)
+    } catch (err) {
+        console.log(err)
+        return res.status(400).send('Error al registrar la novedad bibliográfica.')
+    }
+}
 
 export const save = async (req, res) => {
     try {
-        console.log(req.body)
         const { 
             autores,
             titulo,
