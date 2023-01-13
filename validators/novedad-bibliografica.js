@@ -29,7 +29,10 @@ const novedadBibliograficaValidationRules = () => {
       .withMessage("El nombre de la editorial es obligatorio"),
     body('anno')
       .notEmpty()
-      .withMessage("El año de publicación es obligatorio"),
+      .withMessage("El año de publicación es obligatorio")
+      .bail()
+      .isNumeric()
+      .withMessage("El año de publicación debe ser un número"),
     body('url')
       .if(body('url').notEmpty())
       .isURL()

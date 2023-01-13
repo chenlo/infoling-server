@@ -63,7 +63,7 @@ const novedadBibliograficaSchema = new Schema({
     },
     anno: {
         type: Number,
-        default: 2022
+        default: 2023
     },
     editorial: {
         type: String,
