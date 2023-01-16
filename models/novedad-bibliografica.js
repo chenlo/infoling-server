@@ -94,9 +94,7 @@ const novedadBibliograficaSchema = new Schema({
     urlPublicacion: {
         type: String
     },
-    imagenes: {
-        type: String
-    },
+    imagenes: {},
     tematicas: [ { type: String } ],
 }, 
 { timestamps: true }    

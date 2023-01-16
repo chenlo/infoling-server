@@ -30,7 +30,6 @@ const novedadBibliograficaValidationRules = () => {
     body('anno')
       .notEmpty()
       .withMessage("El año de publicación es obligatorio")
-      .bail()
       .isNumeric()
       .withMessage("El año de publicación debe ser un número"),
     body('url')
@@ -48,15 +47,17 @@ const novedadBibliograficaValidationRules = () => {
     body('formatos.*.isbn13')
       .if(body('formatos.*.isbn10').isEmpty())
       .notEmpty()
-      .withMessage("Debe indicar el ISBN-13 si no rellena el ISBN-10")
-      .bail()
+      .withMessage("Debe indicar el ISBN-13 si no rellena el ISBN-10"),
+    body('formatos.*.isbn13')
+      .if(body('formatos.*.isbn13').notEmpty())  
       .isISBN()
       .withMessage("El formato del ISBN-13 no es válido"),
     body('formatos.*.isbn10')
       .if(body('formatos.*.isbn13').isEmpty())
       .notEmpty()
-      .withMessage("Debe indicar el ISBN-10 si no rellena el ISBN-13")
-      .bail()
+      .withMessage("Debe indicar el ISBN-10 si no rellena el ISBN-13"),
+    body('formatos.*.isbn10')
+      .if(body('formatos.*.isbn10').notEmpty())  
       .isISBN()
       .withMessage("El formato del ISBN-10 no es válido"),
     body('formatos.*.formato')

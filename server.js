@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import { readdirSync } from "fs"
 const morgan = require('morgan')
 require("dotenv").config()
+const multer = require("multer")
 
 const app = express()
 

@@ -1,10 +1,9 @@
+const fs = require('file-system')
 import NovedadBibliografica from "../models/novedad-bibliografica"
-import { validISBN } from "../utils/utils"
-const { body, validationResult } = require('express-validator');
 
 export const validate = async (req, res) => {
     try {
-        console.log('Validado ', req.body.titulo)
+        console.log('Validando ', req.body.titulo)
         console.log(req.body)
     } catch (err) {
         console.log(err)
@@ -26,7 +25,8 @@ export const save = async (req, res) => {
             tematicas,
             formatos,
             indice,
-            descripcion
+            descripcion,
+            imagenes
         } = req.body
         // Guardar
         const novedad = new NovedadBibliografica({
@@ -41,8 +41,10 @@ export const save = async (req, res) => {
             tematicas,
             formatos,
             indice,
-            descripcion
+            descripcion,
+            imagenes
         })
+        console.log("Saving: ", novedad)
         await novedad.save()
         console.log("Novedad bibliográfica guardada")
         return res.status(200).json({ok: true})
