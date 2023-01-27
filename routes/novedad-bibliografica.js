@@ -3,19 +3,19 @@ import express from 'express';
 const router = express.Router();
 const multer = require("multer");
 
-import { save, validate } from '../controllers/novedad-bibliografica'
+import { save, saveImagenes, validate } from '../controllers/novedad-bibliografica'
 
 const { novedadBibliograficaValidationRules, validateNovedadBibliografica } = require('../validators/novedad-bibliografica')
 
 const upload = multer({
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, "/uploads")
+            cb(null, "/uploads/novedad-bibliografica")
         },
         filename: (req, file, cb) => {
             cb(
                 null,
-                file.fieldname + "-" + Date.now() + "-" + file.originalname
+                file.originalname
             )
         }
     }),
@@ -33,6 +33,14 @@ router.post(
     "/novedad-bibliografica",
     save
 )
+
+router.post(
+    "/novedad-bibliografica/imagenes",
+    upload.single('imagenes'),
+    saveImagenes
+)
+
+/novedad-bibliografica/imagenes
 
 router.post(
     "/validate/novedad-bibliografica", 

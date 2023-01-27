@@ -66,6 +66,9 @@ const novedadBibliograficaValidationRules = () => {
     body('formatos.*.numPag')
       .notEmpty()
       .withMessage("El número de páginas de la obra es obligatorio"),
+    body('formatos.*.urlCompraElectronica')
+      .isURL()
+      .withMessage("La URL de compra electrónica del libro no es correcta"),
     body('formatos.*.precioEur')
       .if(body('formatos.*.precioUsa').isEmpty())
       .notEmpty()

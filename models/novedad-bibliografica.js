@@ -40,6 +40,10 @@ const novedadBibliograficaSchema = new Schema({
                 type: Number,
                 required: true
             },
+            urlCompraElectronica: {
+                type: String,
+                required: true
+            },
             precioEur: {
                 type: Number,
                 required: true
@@ -94,8 +98,7 @@ const novedadBibliograficaSchema = new Schema({
     urlPublicacion: {
         type: String
     },
-    imagenes: {},
-    tematicas: [ { type: String } ],
+    tematicas: [ { type: String } ]
 }, 
 { timestamps: true }    
 )
